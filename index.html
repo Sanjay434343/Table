@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Timetable with GSAP Animation</title>
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .timetable {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .day-container {
+            background-color: #fff;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .day {
+            background-color: #007BFF;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 1px solid #007BFF;
+        }
+        .periods {
+            display: flex;
+            flex-direction: column;
+        }
+        .period {
+            background-color: #28A745;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #007BFF;
+            opacity: 0; /* Initially hidden for animation */
+            transform: translateY(10px); /* Initial position for animation */
+            font-size: 14px;
+        }
+        .period:last-child {
+            border-bottom: none; /* Remove border from the last period */
+        }
+        @media (min-width: 600px) {
+            .timetable {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .timetable {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Timetable</h1>
+        <div class="timetable">
+            <div class="day-container">
+                <div class="day">Monday</div>
+                <div class="periods">
+                    <div class="period">Math</div>
+                    <div class="period">Science</div>
+                    <div class="period">English</div>
+                    <div class="period">History</div>
+                    <div class="period">Art</div>
+                </div>
+            </div>
+            <div class="day-container">
+                <div class="day">Tuesday</div>
+                <div class="periods">
+                    <div class="period">Biology</div>
+                    <div class="period">Chemistry</div>
+                    <div class="period">Physics</div>
+                    <div class="period">Geography</div>
+                    <div class="period">Music</div>
+                </div>
+            </div>
+            <div class="day-container">
+                <div class="day">Wednesday</div>
+                <div class="periods">
+                    <div class="period">PE</div>
+                    <div class="period">Math</div>
+                    <div class="period">Science</div>
+                    <div class="period">History</div>
+                    <div class="period">Art</div>
+                </div>
+            </div>
+            <div class="day-container">
+                <div class="day">Thursday</div>
+                <div class="periods">
+                    <div class="period">Math</div>
+                    <div class="period">Science</div>
+                    <div class="period">English</div>
+                    <div class="period">History</div>
+                    <div class="period">Computer Science</div>
+                </div>
+            </div>
+            <div class="day-container">
+                <div class="day">Friday</div>
+                <div class="periods">
+                    <div class="period">Biology</div>
+                    <div class="period">Chemistry</div>
+                    <div class="period">Physics</div>
+                    <div class="period">Geography</div>
+                    <div class="period">Drama</div>
+                </div>
+            </div>
+            <div class="day-container">
+                <div class="day">Saturday</div>
+                <div class="periods">
+                    <div class="period">PE</div>
+                    <div class="period">Math</div>
+                    <div class="period">Science</div>
+                    <div class="period">History</div>
+                    <div class="period">Art</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all periods
+            const periods = document.querySelectorAll('.period');
+            
+            // Animate periods with GSAP
+            gsap.to(periods, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+        });
+    </script>
+</body>
+</html>
