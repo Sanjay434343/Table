@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Timetable with GSAP Animation</title>
+    <title>Responsive Timetable with GSAP Animation</title>
     <!-- Include GSAP library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <style>
@@ -14,7 +14,7 @@
         }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 10px;
             background-color: #fff;
@@ -29,10 +29,12 @@
         }
         .timetable {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
         }
         .day-container {
+            display: flex;
+            flex-direction: column;
             background-color: #fff;
             border: 1px solid #007BFF;
             border-radius: 4px;
@@ -42,7 +44,7 @@
         .day {
             background-color: #007BFF;
             color: white;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
             font-weight: bold;
             border-bottom: 1px solid #007BFF;
@@ -54,7 +56,7 @@
         .period {
             background-color: #28A745;
             color: white;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
             border-bottom: 1px solid #007BFF;
             opacity: 0; /* Initially hidden for animation */
@@ -64,14 +66,14 @@
         .period:last-child {
             border-bottom: none; /* Remove border from the last period */
         }
-        @media (min-width: 600px) {
-            .timetable {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 600px) {
+            .period {
+                font-size: 12px;
+                padding: 8px;
             }
-        }
-        @media (min-width: 900px) {
-            .timetable {
-                grid-template-columns: repeat(3, 1fr);
+            .day {
+                font-size: 14px;
+                padding: 8px;
             }
         }
     </style>
