@@ -20,19 +20,21 @@
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
-            background: #f9f9f9;
+            background: #00000000;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            
         }
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
         .header .logo {
             font-size: 40px;
-            color: #4caf50; /* Green color for the logo */
+            color: #0ce513; /* Green color for the logo */
         }
         .header h1 {
             font-size: 28px;
@@ -44,7 +46,7 @@
             gap: 15px;
         }
         .day-container {
-            flex: 1 1 30%;
+            flex: 1 1 310%;
             background: #ffffff;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
@@ -58,12 +60,13 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
         .day {
-            background: #4caf50;
-            color: white;
+            background: #0ce513;
+            color: rgb(255, 255, 255);
             padding: 15px;
             text-align: center;
-            font-weight: bold;
+            font-weight: 1000;
             font-size: 18px;
+            text-transform: uppercase;
         }
         .periods {
             padding: 15px;
@@ -74,19 +77,24 @@
             background: #e8f5e9;
             color: #333333;
             padding: 10px;
-            text-align: center;
             border: 1px solid #c8e6c9;
             margin-bottom: 10px;
             border-radius: 5px;
             font-size: 16px;
             opacity: 0; /* Initially hidden for animation */
             transform: translateY(10px); /* Initial position for animation */
+            display: flex;
+            justify-content: space-between;
         }
         .period:last-child {
             margin-bottom: 0;
         }
         .open .periods {
             display: flex;
+        }
+        .period-info {
+            display: flex;
+            flex-direction: column;
         }
         @media (max-width: 600px) {
             .day-container {
@@ -101,42 +109,82 @@
                 padding: 10px;
             }
         }
+
+        .tit{
+            font-weight: 1000;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #000000;
+            text-transform: uppercase;
+        }
+
+        .tim{
+            position: relative;
+            top: 45px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <span class="material-symbols-outlined logo">table</span> <!-- Logo -->
+        <h1>Timetable</h1>
+    </div>
     <div class="container">
-        <div class="header">
-            <span class="material-symbols-outlined logo">table</span> <!-- Logo -->
-            <h1>Timetable</h1>
-        </div>
+     
         <div class="timetable">
             <div class="day-container">
                 <div class="day">1st Day Order</div>
                 <div class="periods">
                     <div class="period">
-                        <div>8:00 AM - 9:00 AM</div>
-                        <div>English</div>
-                        <div>Prof. Smith</div>
+                        <div class="period-info">
+                            <div class="tit">English</div>
+                            <div>Prof. Smith</div>
+                        </div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>9:00 AM - 10:00 AM</div>
-                        <div>AI</div>
-                        <div>Prof. Johnson</div>
+                        <div class="period-info">
+                            <div class="tit">AI</div>
+                            <div>Prof. Johnson</div>
+                        </div>
+                        <div class="tim">11:00 AM - 12:00 AM</div>
+                    </div>
+
+                    <div class="period">
+                        <div class="period-info">
+                            <div class="tit">Break</div>
+                           
+                        </div>
+                        <div class="tim">12:00 AM - 12:15 AM</div>
+                    </div>
+
+                    <div class="period">
+                        <div class="period-info">
+                            <div class="tit">Tamil</div>
+                            <div>Prof. Kumar</div>
+                        </div>
+                        <div class="tim">12:15 AM - 01:15 AM</div>
                     </div>
                     <div class="period">
-                        <div>10:00 AM - 11:00 AM</div>
-                        <div>Tamil</div>
-                        <div>Prof. Kumar</div>
+                        <div class="period-info">
+                            <div class="tit">lunch</div>
+                        </div>
+                        <div class="tim">01:15 AM - 2:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>11:00 AM - 12:00 PM</div>
-                        <div>DIS</div>
-                        <div>Prof. Lee</div>
+                        <div class="period-info">
+                            <div class="tit">DIS</div>
+                            <div>Prof. Lee</div>
+                        </div>
+                        <div class="tim">2:00 AM - 3:00 PM</div>
                     </div>
                     <div class="period">
-                        <div>1:00 PM - 2:00 PM</div>
-                        <div>Python</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Python</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">3:00 PM - 4:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -144,29 +192,39 @@
                 <div class="day">2nd Day Order</div>
                 <div class="periods">
                     <div class="period">
-                        <div>8:00 AM - 9:00 AM</div>
-                        <div>DIS</div>
-                        <div>Prof. Lee</div>
+                        <div class="period-info">
+                            <div class="tit">DIS</div>
+                            <div>Prof. Lee</div>
+                        </div>
+                        <div class="tim">8:00 AM - 9:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>9:00 AM - 10:00 AM</div>
-                        <div>English</div>
-                        <div>Prof. Smith</div>
+                        <div class="period-info">
+                            <div class="tit">English</div>
+                            <div>Prof. Smith</div>
+                        </div>
+                        <div class="tim">9:00 AM - 10:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>10:00 AM - 11:00 AM</div>
-                        <div>Py - Lab</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Py - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>11:00 AM - 12:00 PM</div>
-                        <div>Py - Lab</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Py - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">11:00 AM - 12:00 PM</div>
                     </div>
                     <div class="period">
-                        <div>1:00 PM - 2:00 PM</div>
-                        <div>Py - Lab</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Py - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">1:00 PM - 2:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -174,29 +232,39 @@
                 <div class="day">3rd Day Order</div>
                 <div class="periods">
                     <div class="period">
-                        <div>8:00 AM - 9:00 AM</div>
-                        <div>YOGA</div>
-                        <div>Prof. Patel</div>
+                        <div class="period-info">
+                            <div class="tit">YOGA</div>
+                            <div>Prof. Patel</div>
+                        </div>
+                        <div class="tim">8:00 AM - 9:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>9:00 AM - 10:00 AM</div>
-                        <div>Py - Lab</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Py - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">9:00 AM - 10:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>10:00 AM - 11:00 AM</div>
-                        <div>NME</div>
-                        <div>Prof. Green</div>
+                        <div class="period-info">
+                            <div class="tit">NME</div>
+                            <div>Prof. Green</div>
+                        </div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>11:00 AM - 12:00 PM</div>
-                        <div>Python</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Python</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">11:00 AM - 12:00 PM</div>
                     </div>
                     <div class="period">
-                        <div>1:00 PM - 2:00 PM</div>
-                        <div>DIS</div>
-                        <div>Prof. Lee</div>
+                        <div class="period-info">
+                            <div class="tit">DIS</div>
+                            <div>Prof. Lee</div>
+                        </div>
+                        <div class="tim">1:00 PM - 2:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -204,29 +272,39 @@
                 <div class="day">4th Day Order</div>
                 <div class="periods">
                     <div class="period">
-                        <div>8:00 AM - 9:00 AM</div>
-                        <div>Tamil</div>
-                        <div>Prof. Kumar</div>
+                        <div class="period-info">
+                            <div class="tit">Tamil</div>
+                            <div>Prof. Kumar</div>
+                        </div>
+                        <div class="tim">8:00 AM - 9:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>9:00 AM - 10:00 AM</div>
-                        <div>Python</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Python</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim"> 9:00 AM - 10:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>10:00 AM - 11:00 AM</div>
-                        <div>AI</div>
-                        <div>Prof. Johnson</div>
+                        <div class="period-info">
+                            <div class="tit">English</div>
+                            <div>Prof. Smith</div>
+                        </div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>11:00 AM - 12:00 PM</div>
-                        <div>DIS</div>
-                        <div>Prof. Lee</div>
+                        <div class="period-info">
+                            <div class="tit">Py - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">11:00 AM - 12:00 PM</div>
                     </div>
                     <div class="period">
-                        <div>1:00 PM - 2:00 PM</div>
-                        <div>AI</div>
-                        <div>Prof. Johnson</div>
+                        <div class="period-info">
+                            <div class="tit">DIS</div>
+                            <div>Prof. Lee</div>
+                        </div>
+                        <div class="tim">1:00 PM - 2:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -234,29 +312,39 @@
                 <div class="day">5th Day Order</div>
                 <div class="periods">
                     <div class="period">
-                        <div>8:00 AM - 9:00 AM</div>
-                        <div>Python</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">Python</div>
+                            <div>Prof. Patel</div>
+                        </div>
+                        <div class="tim">8:00 AM - 9:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>9:00 AM - 10:00 AM</div>
-                        <div>Tamil</div>
-                        <div>Prof. Kumar</div>
+                        <div class="period-info">
+                            <div class="tit">Tamil</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">9:00 AM - 10:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>10:00 AM - 11:00 AM</div>
-                        <div>NME</div>
-                        <div>Prof. Green</div>
+                        <div class="period-info">
+                            <div class="tit">English</div>
+                            <div>Prof. Green</div>
+                        </div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>11:00 AM - 12:00 PM</div>
-                        <div>English</div>
-                        <div>Prof. Smith</div>
+                        <div class="period-info">
+                            <div class="tit">AI - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">11:00 AM - 12:00 PM</div>
                     </div>
                     <div class="period">
-                        <div>1:00 PM - 2:00 PM</div>
-                        <div>AI</div>
-                        <div>Prof. Johnson</div>
+                        <div class="period-info">
+                            <div class="tit">AI - Lab</div>
+                            <div>Prof. Lee</div>
+                        </div>
+                        <div class="tim">1:00 PM - 2:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -264,43 +352,65 @@
                 <div class="day">6th Day Order</div>
                 <div class="periods">
                     <div class="period">
-                        <div>8:00 AM - 9:00 AM</div>
-                        <div>English</div>
-                        <div>Prof. Smith</div>
+                        <div class="period-info">
+                            <div class="tit">Tamil</div>
+                            <div>Prof. Patel</div>
+                        </div>
+                        <div class="tim">8:00 AM - 9:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>9:00 AM - 10:00 AM</div>
-                        <div>Python</div>
-                        <div>Prof. Davis</div>
+                        <div class="period-info">
+                            <div class="tit">AI</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">9:00 AM - 10:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>10:00 AM - 11:00 AM</div>
-                        <div>AI</div>
-                        <div>Prof. Johnson</div>
+                        <div class="period-info">
+                            <div class="tit">AI - Lab</div>
+                            <div>Prof. Green</div>
+                        </div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
-                        <div>11:00 AM - 12:00 PM</div>
-                        <div>DIS</div>
-                        <div>Prof. Lee</div>
+                        <div class="period-info">
+                            <div class="tit">AI - Lab</div>
+                            <div>Prof. Davis</div>
+                        </div>
+                        <div class="tim">11:00 AM - 12:00 PM</div>
                     </div>
                     <div class="period">
-                        <div>1:00 PM - 2:00 PM</div>
-                        <div>YOGA</div>
-                        <div>Prof. Patel</div>
+                        <div class="period-info">
+                            <div class="tit">Ai - Lab</div>
+                            <div>Prof. Lee</div>
+                        </div>
+                        <div class="tim">1:00 PM - 2:00 PM</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        document.querySelectorAll('.day-container').forEach(container => {
-            container.addEventListener('click', () => {
-                container.classList.toggle('open');
-                gsap.to(container.querySelectorAll('.period'), {
-                    duration: 0.5,
-                    opacity: container.classList.contains('open') ? 1 : 0,
-                    y: container.classList.contains('open') ? 0 : 10,
-                    stagger: 0.1
+        document.addEventListener('DOMContentLoaded', () => {
+            const dayContainers = document.querySelectorAll('.day-container');
+            dayContainers.forEach(container => {
+                container.addEventListener('click', () => {
+                    container.classList.toggle('open');
+                    const periods = container.querySelectorAll('.period');
+                    if (container.classList.contains('open')) {
+                        gsap.to(periods, {
+                            duration: 0.5,
+                            opacity: 1,
+                            y: 0,
+                            stagger: 0.1
+                        });
+                    } else {
+                        gsap.to(periods, {
+                            duration: 0.5,
+                            opacity: 0,
+                            y: 10
+                        });
+                    }
                 });
             });
         });
