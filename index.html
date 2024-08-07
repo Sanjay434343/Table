@@ -12,17 +12,17 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #1e1e1e; /* Dark background for the body */
-            color: #f5f5f5; /* Light text color for contrast */
+            background: #ffffff;
+            color: #333333;
         }
         .container {
             width: 90%;
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
-            background: transparent; /* Semi-transparent dark background */
+            background: #f9f9f9;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         .header {
             display: flex;
@@ -31,63 +31,67 @@
             margin-bottom: 20px;
         }
         .header .logo {
-            font-size: 40px; /* Adjust logo size */
-            color: #f5f5f5;
+            font-size: 40px;
+            color: #4caf50; /* Green color for the logo */
         }
         .header h1 {
             font-size: 28px;
-            color: #f5f5f5;
+            color: #333333;
         }
         .timetable {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
         }
         .day-container {
-            display: flex;
-            flex-direction: column;
-            background: rgba(40, 40, 40, 0.8); /* Darker semi-transparent background */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for contrast */
+            flex: 1 1 30%;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             cursor: pointer;
-            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .day-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
         .day {
-            background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient for the day */
+            background: #4caf50;
             color: white;
             padding: 15px;
             text-align: center;
             font-weight: bold;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 18px;
         }
         .periods {
-            display: flex;
+            padding: 15px;
+            display: none;
             flex-direction: column;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            max-height: 0; /* Hide periods initially */
-            background: rgba(50, 50, 50, 0.8); /* Darker background for periods */
         }
         .period {
-            background: linear-gradient(135deg, #16a085, #1abc9c); /* Gradient for periods */
-            color: white;
-            padding: 12px;
+            background: #e8f5e9;
+            color: #333333;
+            padding: 10px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #c8e6c9;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 16px;
             opacity: 0; /* Initially hidden for animation */
             transform: translateY(10px); /* Initial position for animation */
-            font-size: 16px;
         }
         .period:last-child {
-            border-bottom: none; /* Remove border from the last period */
+            margin-bottom: 0;
         }
         .open .periods {
-            max-height: 1000px; /* Adjust as needed to fit content */
+            display: flex;
         }
         @media (max-width: 600px) {
+            .day-container {
+                flex: 1 1 100%;
+            }
             .day {
                 font-size: 16px;
                 padding: 12px;
@@ -95,9 +99,6 @@
             .period {
                 font-size: 14px;
                 padding: 10px;
-            }
-            .timetable {
-                grid-template-columns: 1fr; /* Stack items in a single column on small screens */
             }
         }
     </style>
@@ -140,7 +141,7 @@
                 </div>
             </div>
             <div class="day-container">
-                <div class="day">4TH Day Order</div>
+                <div class="day">4th Day Order</div>
                 <div class="periods">
                     <div class="period">Tamil</div>
                     <div class="period">Python</div>
@@ -175,18 +176,6 @@
     <!-- GSAP Animation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Select all periods
-            const periods = document.querySelectorAll('.period');
-            
-            // Animate periods with GSAP
-            gsap.to(periods, {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: 'power2.out'
-            });
-
             // Function to toggle the timetable details
             document.querySelectorAll('.day-container').forEach(container => {
                 container.addEventListener('click', function() {
@@ -198,12 +187,18 @@
                     });
                     // Toggle the clicked container
                     this.classList.toggle('open');
-                });
-            });
 
-            // Hide all periods initially on page load
-            document.querySelectorAll('.day-container').forEach(container => {
-                container.classList.remove('open');
+                    // Animate periods with GSAP when container is opened
+                    if (this.classList.contains('open')) {
+                        gsap.to(this.querySelectorAll('.period'), {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            stagger: 0.1,
+                            ease: 'power2.out'
+                        });
+                    }
+                });
             });
         });
     </script>
