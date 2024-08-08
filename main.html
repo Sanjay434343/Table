@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,11 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #bababa;
+            background: #e6e6e6;
+            background: #f3f3f3;
             color: #333333;
         }
+        
         .container {
             width: 90%;
             max-width: 1000px;
@@ -22,8 +25,8 @@
             padding: 20px;
             background: #00000000;
             border-radius: 15px;
-            
         }
+        
         .header {
             display: flex;
             align-items: center;
@@ -33,34 +36,41 @@
             margin-right: 10px;
             border-bottom: 2px solid black;
         }
+        
         .header .logo {
             font-size: 40px;
-            color: #CCFF99; /* Green color for the logo */
+            color: #c1f507;
+            /* Green color for the logo */
         }
+        
         .header h1 {
             font-size: 28px;
-            color:  #CCFF99;
+            color: #abdb0f;
             font-weight: 1000;
         }
+        
         .timetable {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
         }
+        
         .day-container {
             flex: 1 1 310%;
-            background: #ffffff;
+            background: #dfdfdf;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(215, 145, 145, 0.05);
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
         .day-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
+        
         .day {
             background: #CCFF99;
             color: #262626;
@@ -70,11 +80,13 @@
             font-size: 18px;
             text-transform: uppercase;
         }
+        
         .periods {
             padding: 15px;
             display: none;
             flex-direction: column;
         }
+        
         .period {
             background: #e8f5e9;
             color: #333333;
@@ -83,21 +95,27 @@
             margin-bottom: 10px;
             border-radius: 5px;
             font-size: 16px;
-            opacity: 0; /* Initially hidden for animation */
-            transform: translateY(10px); /* Initial position for animation */
+            opacity: 0;
+            /* Initially hidden for animation */
+            transform: translateY(10px);
+            /* Initial position for animation */
             display: flex;
             justify-content: space-between;
         }
+        
         .period:last-child {
             margin-bottom: 0;
         }
+        
         .open .periods {
             display: flex;
         }
+        
         .period-info {
             display: flex;
             flex-direction: column;
         }
+        
         @media (max-width: 600px) {
             .day-container {
                 flex: 1 1 100%;
@@ -111,36 +129,38 @@
                 padding: 10px;
             }
         }
-
-        .tit{
+        
+        .tit {
             font-weight: 1000;
             font-size: 20px;
             margin-bottom: 15px;
             color: #000000;
             text-transform: uppercase;
         }
-
-        .tim{
+        
+        .tim {
             position: relative;
             top: 45px;
             font-weight: 600;
         }
-
-        .tim1{
+        
+        .tim1 {
             position: relative;
             top: 30px;
             font-weight: 600;
         }
     </style>
 </head>
+
 <body>
     <div class="header">
-        <span class="material-symbols-outlined logo">table</span> <!-- Logo -->
+        <span class="material-symbols-outlined logo">table</span>
+        <!-- Logo -->
         <h1>Timetable</h1>
     </div>
-    
+
     <div class="container">
-     
+
         <div class="timetable">
             <div class="day-container">
                 <div class="day">1st Day Order</div>
@@ -159,19 +179,17 @@
                         </div>
                         <div class="tim">11:00 AM - 12:00 AM</div>
                     </div>
-
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Break</div>
-                           
+
                         </div>
                         <div class="tim1">12:00 AM - 12:15 AM</div>
                     </div>
-
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Tamil</div>
-                            <div>Prof. Unknown</div>
+                            <div>Prof. jamuna selvaraj</div>
                         </div>
                         <div class="tim">12:15 AM - 01:15 AM</div>
                     </div>
@@ -205,19 +223,19 @@
                             <div class="tit">DIS</div>
                             <div>Prof. Earnest Rajadurai</div>
                         </div>
-                        <div class="tim">8:00 AM - 9:00 AM</div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">English</div>
                             <div>Prof. Prakash</div>
                         </div>
-                        <div class="tim">9:00 AM - 10:00 AM</div>
+                        <div class="tim">11:00 AM - 12:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Break</div>
-                           
+
                         </div>
                         <div class="tim1">12:00 AM - 12:15 AM</div>
                     </div>
@@ -226,7 +244,7 @@
                             <div class="tit">Py - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">10:00 AM - 11:00 AM</div>
+                        <div class="tim">12:15 AM - 1:15 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
@@ -239,14 +257,14 @@
                             <div class="tit">Py - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">11:00 AM - 12:00 PM</div>
+                        <div class="tim">2:00 AM - 3:00 PM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Py - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">1:00 PM - 2:00 PM</div>
+                        <div class="tim">3:00 PM - 4:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -258,19 +276,19 @@
                             <div class="tit">YOGA</div>
                             <div>Prof. Unknown</div>
                         </div>
-                        <div class="tim">8:00 AM - 9:00 AM</div>
+                        <div class="tim">9:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Py - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">9:00 AM - 10:00 AM</div>
+                        <div class="tim">11:00 AM - 12:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Break</div>
-                           
+
                         </div>
                         <div class="tim1">12:00 AM - 12:15 AM</div>
                     </div>
@@ -279,7 +297,7 @@
                             <div class="tit">NME</div>
                             <div>Prof. Unknown</div>
                         </div>
-                        <div class="tim">10:00 AM - 11:00 AM</div>
+                        <div class="tim">12:15 AM - 1:15 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
@@ -292,14 +310,14 @@
                             <div class="tit">Python</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">11:00 AM - 12:00 PM</div>
+                        <div class="tim">2:00 AM - 3:00 PM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">DIS</div>
                             <div>Prof. Earnest Rajadurai</div>
                         </div>
-                        <div class="tim">1:00 PM - 2:00 PM</div>
+                        <div class="tim">3:00 PM - 4:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -309,21 +327,21 @@
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Tamil</div>
-                            <div>Prof. Unknown</div>
+                            <div>Prof. jamuna selvaraj</div>
                         </div>
-                        <div class="tim">8:00 AM - 9:00 AM</div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Python</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim"> 9:00 AM - 10:00 AM</div>
+                        <div class="tim"> 11:00 AM - 12:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Break</div>
-                           
+
                         </div>
                         <div class="tim1">12:00 AM - 12:15 AM</div>
                     </div>
@@ -332,7 +350,7 @@
                             <div class="tit">English</div>
                             <div>Prof. Prakash</div>
                         </div>
-                        <div class="tim">10:00 AM - 11:00 AM</div>
+                        <div class="tim">12:15 AM - 1:15 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
@@ -345,14 +363,14 @@
                             <div class="tit">Py - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">11:00 AM - 12:00 PM</div>
+                        <div class="tim">2:00 AM - 3:00 PM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">DIS</div>
                             <div>Prof. Earnest Rajadurai</div>
                         </div>
-                        <div class="tim">1:00 PM - 2:00 PM</div>
+                        <div class="tim">3:00 PM - 4:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -364,19 +382,19 @@
                             <div class="tit">Python</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">8:00 AM - 9:00 AM</div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Tamil</div>
-                            <div>Prof. Unknown</div>
+                            <div>Prof. jamuna selvaraj</div>
                         </div>
-                        <div class="tim">9:00 AM - 10:00 AM</div>
+                        <div class="tim">11:00 AM - 12:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Break</div>
-                           
+
                         </div>
                         <div class="tim1">12:00 AM - 12:15 AM</div>
                     </div>
@@ -385,7 +403,7 @@
                             <div class="tit">English</div>
                             <div>Prof. Prakash</div>
                         </div>
-                        <div class="tim">10:00 AM - 11:00 AM</div>
+                        <div class="tim">12:15 AM - 1:15 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
@@ -398,14 +416,14 @@
                             <div class="tit">AI - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">11:00 AM - 12:00 PM</div>
+                        <div class="tim">2:00 AM - 3:00 PM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">AI - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">1:00 PM - 2:00 PM</div>
+                        <div class="tim">3:00 PM - 4:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -415,21 +433,21 @@
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Tamil</div>
-                            <div>Prof. Prakash</div>
+                            <div>Prof. jamuna selvaraj</div>
                         </div>
-                        <div class="tim">8:00 AM - 9:00 AM</div>
+                        <div class="tim">10:00 AM - 11:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">AI</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">9:00 AM - 10:00 AM</div>
+                        <div class="tim">11:00 AM - 12:00 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Break</div>
-                           
+
                         </div>
                         <div class="tim1">12:00 AM - 12:15 AM</div>
                     </div>
@@ -438,7 +456,7 @@
                             <div class="tit">AI - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">10:00 AM - 11:00 AM</div>
+                        <div class="tim">12:15 AM - 1:15 AM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
@@ -451,14 +469,14 @@
                             <div class="tit">AI - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">11:00 AM - 12:00 PM</div>
+                        <div class="tim">2:00 AM - 3:00 PM</div>
                     </div>
                     <div class="period">
                         <div class="period-info">
                             <div class="tit">Ai - Lab</div>
                             <div>Prof. Neraimathi</div>
                         </div>
-                        <div class="tim">1:00 PM - 2:00 PM</div>
+                        <div class="tim">3:00 PM - 4:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -490,4 +508,5 @@
         });
     </script>
 </body>
+
 </html>
